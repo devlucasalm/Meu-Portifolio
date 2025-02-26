@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lucas Almeida | Portifólio</title>
+</head>
+
+<body>
+
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Inicio</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contato" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="img/Foto de Perfil.jpg" alt="Foto Lucas de Almeida" class="foto-perfil">
+        <h1>Lucas de Almeida</h1>
+        <p class="cabecalho-sub-titulo">Estudante de Desenvolvimento Front-End</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá! Sou um jovem programador em busca da minha primeira oportunidade no mercado de trabalho. Finalizando o
+                Técnico em Informática, desenvolvo habilidades em HTML, CSS e JavaScript, com foco em desenvolvimento
+                web.
+                Tenho conhecimento em metodologias ágeis e valorizo o trabalho em equipe. Busco um estágio ou
+                oportunidade de emprego para aplicar e expandir meus conhecimentos, contribuindo para o crescimento da
+                empresa.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <div class="projetos-card">
+                <img src="img/Comparador de Preços.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Comparador de Preços</h3>
+                    <p class="paragrafo-projetos">Desenvolvi um comparador de preços utilizando a API do Mercado Livre,
+                        permitindo que os usuários busquem produtos e comparem preços de diferentes vendedores em tempo
+                        real. O projeto foi criado com HTML, CSS e JavaScript, focando na praticidade e eficiência na
+                        busca
+                        por melhores ofertas.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="img/Landing Page.png" alt="Projeto 2" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Landing Page</h3>
+                    <p class="paragrafo-projetos">Desenvolvi uma Landing Page responsiva para apresentar um
+                        serviço/produto
+                        de forma clara e atrativa. O design moderno e intuitivo foca na experiência do usuário, com uma
+                        estrutura otimizada para conversões.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="img/Portifolio.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Portifólio Profissional</h3>
+                    <p class="paragrafo-projetos">Desenvolvi um portfólio online para apresentar meus projetos,
+                        habilidades
+                        e trajetória como desenvolvedor. O site conta com um design moderno e responsivo, destacando
+                        meus
+                        trabalhos de forma organizada e interativa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+        </form>
+    </section>
+
+    <script>
+
+        function enviarWhats(event) {
+            event.preventDefault()
+
+            const nome = document.querySelector("#nome").value;
+            const mensagem = document.querySelector("#mensagem").value;
+            const telefone = "5551998330652";
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+            window.open(url, '_blank')
+        }
+
+    </script>
+
+</body>
+
+</html>
